@@ -1,0 +1,32 @@
+#Q2.A)
+import matplotlib.pyplot as plt
+
+subject_names = ["Math", "Science", "History", "English", "Art"]
+marks_obtained = [90, 85, 78, 92, 70]
+
+plt.figure(figsize=(8,4))#optional
+plt.subplot(121)  
+plt.pie(marks_obtained,labels=subject_names,autopct='%1.1f%%')
+plt.title("Pie Chart: Marks Obtained in Subjects")
+
+plt.subplot(122)  
+plt.barh(subject_names,marks_obtained,color='skyblue')
+plt.title("Bar Chart: Marks Obtained in Subjects")
+plt.xlabel("Marks")
+
+plt.tight_layout()
+plt.show()
+
+#B)
+import pandas as pd
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'Graduation Percentage': [85.5, 92.0, 78.3, 89.8, 91.2],
+    'Age': [23, 25, 22, 24, 26]
+}
+
+df = pd.DataFrame(data)
+print(df,"\n")
+
+print(df['Age'].mean())
+print(df['Graduation Percentage'].mean())

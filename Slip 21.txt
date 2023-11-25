@@ -1,0 +1,40 @@
+#Q2.A)
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+species_counts=data['species'].value_counts()
+
+species_counts.plot(kind='bar',color='b')
+plt.title('Frequency of Iris Species')
+plt.xlabel('Species')
+plt.ylabel('Count')
+plt.show()
+
+#B)
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+iris = pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+
+plt.figure(figsize=(12,6))
+
+plt.subplot(2, 2, 1)
+sns.histplot(iris, x='sepal_length', hue='species', kde=True)
+plt.title('Sepal Length')
+
+plt.subplot(2, 2, 2)
+sns.histplot(iris, x='sepal_width', hue='species', kde=True)
+plt.title('Sepal Width')
+
+plt.subplot(2, 2, 3)
+sns.histplot(iris, x='petal_length', hue='species', kde=True)
+plt.title('Petal Length')
+
+plt.subplot(2, 2, 4)
+sns.histplot(iris, x='petal_width', hue='species', kde=True)
+plt.title('Petal Width')
+
+plt.tight_layout()
+plt.show()

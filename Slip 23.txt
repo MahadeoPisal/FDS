@@ -1,0 +1,10 @@
+#Q2.
+import pandas as pd
+from sklearn.preprocessing import Binarizer
+
+iris=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+feature_to_binarize='sepal_length'
+threshold=5.5
+binarizer=Binarizer(threshold=threshold)
+iris[feature_to_binarize]=binarizer.transform(iris[[feature_to_binarize]])
+print(iris)

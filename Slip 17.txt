@@ -1,0 +1,23 @@
+#Q2.A)
+import pandas as pd 
+import matplotlib.pyplot as plt
+
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+
+species_counts=data['species'].value_counts()
+plt.pie(species_counts,labels=species_counts.index,autopct='%1.1f%%')
+plt.title('Frequency Of Iris Species')
+plt.show()
+
+#B)
+import pandas as pd
+
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank', 'Grace', 'Hannah', 'Ivy', 'Jack'],
+    'age': [28, 32, 25, 34, 26, 29, 27, 31, 24, 30],
+    'salary': [55000, 60000, 52000, 65000, 48000, 59000, 54000, 61000, 50000, 63000],
+    'department': ['HR', 'IT', 'Sales', 'HR', 'Finance', 'IT', 'IT', 'HR', 'Finance', 'Sales']
+}
+
+df = pd.DataFrame(data)
+print(df)

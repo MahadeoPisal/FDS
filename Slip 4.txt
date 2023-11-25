@@ -1,0 +1,45 @@
+#Q2.A)
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+random_array=np.random.randint(0,101,size=50)
+
+plt.figure(figsize=(12,6))#optional
+
+plt.subplot(2,2,1)
+plt.plot(random_array,c='b',marker='o',linestyle='-')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.title('Line Chart')
+
+plt.subplot(2,2,2)
+plt.scatter(range(len(random_array)),random_array,c='g',marker='o')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.title('Scatter Plot')
+
+plt.subplot(2,2,3)
+plt.hist(random_array,bins=10,color='orange',edgecolor='black')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Histogram')
+
+plt.subplot(2,2,4)
+plt.boxplot(random_array,vert=False,patch_artist=True)
+plt.xlabel('Value')
+plt.title('Boxplot')
+
+plt.tight_layout()#optional
+plt.show()
+
+#B)
+import pandas as pd
+
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\User_Data.csv")
+data.shape
+data.shape[0]
+data.shape[1]
+data.dtypes
+data.columns
+data.describe()

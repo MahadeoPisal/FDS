@@ -1,0 +1,50 @@
+#Q2.A)
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(0)
+random_data=np.random.randint(0,100,50)
+x_values=np.arange(1,51)
+
+fig,axs=plt.subplots(2,2,figsize=(12,8))
+
+axs[0,0].plot(x_values,random_data,marker='o',linestyle='-',c='b')
+axs[0,0].set_title('Line Chart')
+axs[0,0].set_xlabel('Index')
+axs[0,0].set_ylabel('Value')
+
+axs[0,1].scatter(x_values,random_data,c='r',marker='x')
+axs[0,1].set_title('Scatter Plot')
+axs[0,1].set_xlabel('Index')
+axs[0,1].set_ylabel('Value')
+
+axs[1,0].hist(random_data,color='green',edgecolor='black')
+axs[1,0].set_title('Histogram')
+axs[1,0].set_xlabel('Value')
+axs[1,0].set_ylabel('Frequency')
+
+axs[1,1].boxplot(random_data,vert=False,widths=0.5,patch_artist=True)
+axs[1,1].set_title('Box Plot')
+axs[1,1].set_yticklabels(['Random Data'])
+axs[1,1].set_xlabel('Value')
+
+plt.tight_layout()
+plt.show()
+
+#B)
+import pandas as pd
+
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva', 'Frank', 'Alice', 'Eva', 'Grace', 'Bob'],
+    'salary': [50000, 60000, 70000, 55000, 75000, 62000, None, 72000, '', 60000],
+    'department': ['HR', 'IT', 'Sales', 'HR', 'Finance', 'IT', 'IT', None, 'Finance', 'Sales']
+}
+df=pd.DataFrame(data)
+print("Initial DataFrame:")
+print(df)
+
+df = df.dropna()
+df = df[df['salary'] != '']
+
+print("\nModified DataFrame after dropping null and empty values:")
+print(df)

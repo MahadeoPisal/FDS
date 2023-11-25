@@ -1,0 +1,31 @@
+#Q2.A)
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data=pd.read_csv(r"C:\Users\SOHAM\Downloads\IRIS.csv")
+plt.figure(figsize=(10,6))#optional
+
+plt.subplot(2,2,1)
+sns.boxplot(x='species',y='sepal_length',data=data)
+plt.title('Sepal Length')
+
+plt.subplot(2,2,2)
+sns.boxplot(x='species',y='sepal_width',data=data)
+plt.title('Sepal Width')
+
+plt.subplot(2,2,3)
+sns.boxplot(x='species',y='petal_length',data=data)
+plt.title('Petal Length')
+
+plt.subplot(2,2,4)
+sns.boxplot(x='species',y='petal_width',data=data)
+plt.title('Petal Width')
+
+plt.tight_layout()#optional
+plt.show()
+
+#B)
+import pandas as pd
+data=pd.read_csv(r"C:\Users\SOHAM\Downloads\SOCR-HeightWeight.csv")
+data.describe()

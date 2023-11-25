@@ -1,0 +1,30 @@
+#Q2.A)
+import pandas as pd
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\Data.csv")
+mean_salary=data['Salary'].mean()
+mean_age=data['Age'].mean()
+data['Salary'].fillna(mean_salary,inplace=True)
+data['Age'].fillna(mean_age,inplace=True)
+print(data)
+
+#B)
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\Data.csv")
+plt.figure(figsize=(10,6))#optional
+plt.plot(data['Name'],data['Salary'],marker='o',linestyle='-')
+plt.xlabel('Name')
+plt.ylabel('Salary')
+plt.title('Line Plot of Name VS Salary')
+plt.xticks(rotation=45)#optional
+plt.tight_layout()#optional
+plt.show()
+
+#C)
+import pandas as pd
+import random
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\Data.csv")
+data.head(10)
+data.tail(10)
+data.sample(20)
+data.shape

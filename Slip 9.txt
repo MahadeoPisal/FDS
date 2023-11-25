@@ -1,0 +1,38 @@
+#Q2.A)
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(0)
+random_data=np.random.randint(0,100,size=50)
+x_values=np.arange(1,51)
+fig,(ax1,ax2)=plt.subplots(1,2,figsize=(12,4))
+
+ax1.plot(x_values,random_data,marker='o',linestyle='-',c='b')
+ax1.set_title('Line Chart')
+ax1.set_xlabel('Index')
+ax1.set_ylabel('Value')
+
+ax2.scatter(x_values,random_data,c='r',marker='x')
+ax2.set_title('Scatter Plot')
+ax2.set_xlabel('Index')
+ax2.set_ylabel('Value')
+
+plt.tight_layout()
+plt.show()    
+
+#B)
+import matplotlib.pyplot as plt
+subject_names=["Maths","Science","English","History","Art"]
+marks_obtained=[90,87,81,79,98]
+
+plt.figure(figsize=(6,6))#optional
+plt.pie(marks_obtained,labels=subject_names,autopct='%1.1f%%')
+plt.title('Marks obtained in Subjects')
+plt.show()
+
+#C)
+import pandas as pd
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\winequality-red.csv")
+data.describe()
+data.shape
+data.head(3)

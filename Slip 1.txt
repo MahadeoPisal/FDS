@@ -1,0 +1,15 @@
+#Q2.A)
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_csv(r"C:\Users\SOHAM\Downloads\IRIS.csv")
+species_counts=data['species'].value_counts()
+plt.pie(species_counts,labels=species_counts.index,autopct='%1.1f%%',startangle=140)
+plt.title('Frequency of Iris Species')
+plt.show()
+
+#B)
+import pandas as pd
+data=pd.read_csv(r"C:\Users\SOHAM\Downloads\winequality-red (1).csv")
+data.describe()
+data.count()
+data.dtypes

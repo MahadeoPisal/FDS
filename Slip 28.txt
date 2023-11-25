@@ -1,0 +1,51 @@
+#Q2.A)
+import pandas as pd
+
+data={
+    'name':['Alice','Bob','Charlie','David','Eve','Frank','Grace','Helen','Ivy','Jack'],
+    'age':[25,30,22,35,28,29,26,31,23,27],
+    'percentage':[85,92,78,91,89,77,94,88,83,90]
+}
+
+df=pd.DataFrame(data)
+print(df)
+
+#B)
+import pandas as pd
+
+data={
+    'name':['Alice','Bob','Charlie','David','Eve','Frank','Grace','Helen','Ivy','Jack'],
+    'age':[25,30,22,35,28,29,26,31,23,27],
+    'percentage':[85,92,78,91,89,77,94,88,83,90]
+}
+
+df=pd.DataFrame(data)
+
+print(df.shape)
+num_rows,num_columns=df.shape
+print("\nNumber of rows:",num_rows)
+print("\nNumber of columns:",num_columns)
+print("\n",df.dtypes)
+print("\n",df.columns)
+print("\n",df.describe())
+
+#C)
+import pandas as pd
+
+data={
+    'name':['Alice','Bob','Charlie','David','Eve','Frank','Grace','Helen','Ivy','Jack'],
+    'age':[25,30,22,35,28,29,26,31,23,27],
+    'percentage':[85,92,78,91,89,77,94,88,83,90]
+}
+
+df=pd.DataFrame(data)
+
+additional_data={
+    'name':['Alice','Bob','Charlie','David','Eve'],
+    'age':[25,None,22,35,28],
+    'percentage':[85,85,78,None,89],
+    'remarks':['','','','','']
+}
+
+df=pd.concat([df,pd.DataFrame(additional_data)],ignore_index=True)
+print(df)

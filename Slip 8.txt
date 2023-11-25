@@ -1,0 +1,9 @@
+#Q2.
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\Study\FDS practical\winequality-red.csv")
+features=data.drop('quality',axis=1)
+scaler=StandardScaler()
+standardized_features=scaler.fit_transform(features)
+standardized_data=pd.DataFrame(standardized_features,columns=features.columns)
+print(standardized_data)

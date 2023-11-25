@@ -1,0 +1,19 @@
+#Q2.A)
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+
+iris=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+numerical_features=['sepal_length','sepal_width','petal_length','petal_width']
+scaler = MinMaxScaler()
+iris[numerical_features] = scaler.fit_transform(iris[numerical_features])
+print(iris)
+
+#B)
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+iris=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+numerical_features=['sepal_length','sepal_width','petal_length','petal_width']
+scaler = StandardScaler()
+iris[numerical_features] = scaler.fit_transform(iris[numerical_features])
+print(iris)

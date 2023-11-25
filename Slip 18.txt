@@ -1,0 +1,30 @@
+#Q2.A)
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+iris=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\iris.csv")
+
+plt.subplot(2,2,1)
+sns.boxplot(x='species',y='sepal_length',data=iris)
+
+plt.subplot(2,2,2)
+sns.boxplot(x='species',y='sepal_width',data=iris)
+
+plt.subplot(2,2,3)
+sns.boxplot(x='species',y='petal_length',data=iris)
+
+plt.subplot(2,2,4)
+sns.boxplot(x='species',y='petal_width',data=iris)
+
+plt.tight_layout()
+plt.show()
+
+#B)
+import pandas as pd
+
+data=pd.read_csv(r"C:\Users\SOHAM\OneDrive\Desktop\FDS Slips\SOCR-HeightWeight.csv")
+
+print(data.head())
+print("\n",data.tail())
+print("\n",data.sample(10))

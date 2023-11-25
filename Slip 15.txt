@@ -1,0 +1,43 @@
+#Q2.A)
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(0)
+random_data=np.random.randint(0,100,50)
+x_values=np.arange(1,51)
+
+fig,axs=plt.subplots(2,2,figsize=(12,8))
+
+axs[0,0].plot(x_values,random_data,marker='o',linestyle='-',c='b')
+axs[0,0].set_title('Line Chart')
+axs[0,0].set_xlabel('Index')
+axs[0,0].set_ylabel('Value')
+
+axs[0,1].scatter(x_values,random_data,c='r',marker='x')
+axs[0,1].set_title('Scatter Plot')
+axs[0,1].set_xlabel('Index')
+axs[0,1].set_ylabel('Value')
+
+axs[1,0].hist(random_data,bins=10,color='green',edgecolor='black')
+axs[1,0].set_title('Histogram')
+axs[1,0].set_xlabel('Value')
+axs[1,0].set_ylabel('Frequency')
+
+axs[1,1].boxplot(random_data,vert=False,widths=0.5,patch_artist=True)
+axs[1,1].set_title('Box Plot')
+axs[1,1].set_xlabel('Value')
+axs[1,1].set_yticklabels(['Random Data'])
+
+plt.tight_layout()
+plt.show()
+
+#B)
+import matplotlib.pyplot as plt
+
+subject_names=["Maths","Science","English","History","Art"]
+marks_obtained=[90,87,67,88,99]
+
+plt.pie(marks_obtained,labels=subject_names,autopct='%1.1f%%')
+plt.title('Marks Obtained In Subjects')
+plt.show()
+
